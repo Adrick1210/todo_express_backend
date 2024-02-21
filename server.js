@@ -12,8 +12,10 @@ const app = express();
 app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());
+const TodoRouter = require("./controllers/todo");
 
-//ROUTES
+//ROUTER
+app.use("/todo", TodoRouter);
 
 // TEST
 app.get("/", (req, res) => {
