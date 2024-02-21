@@ -11,6 +11,7 @@ const app = express();
 // MIDDLEWARE
 app.use(morgan("dev"));
 app.use(cors());
+app.use(express.json());
 
 //ROUTES
 
