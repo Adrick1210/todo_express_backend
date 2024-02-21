@@ -15,7 +15,7 @@ app.use(express.json());
 const TodoRouter = require("./controllers/todo");
 
 //ROUTER
-app.use("/todo", TodoRouter);
+app.use("/todos", TodoRouter);
 
 // TEST
 app.get("/", (req, res) => {
