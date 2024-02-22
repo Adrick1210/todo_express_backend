@@ -38,5 +38,13 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    res.json(await Todos.findById(req.params.id));
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // EXPORTS
 module.exports = router;

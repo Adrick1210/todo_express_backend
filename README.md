@@ -21,3 +21,4 @@ The user will be able to use these routes to create, read, update and delete on 
 | router.post |  /   | POST    | Renders a created todo on the Index Page |
 | router.put | /:id   | PUT    | Updates data to a todo on the Todos Index by id |
 | router.delete | /:id   | DELETE   | Removes a todo from the data array |
+| router.get | /:id   | GET  | Shows a todo by ID |
