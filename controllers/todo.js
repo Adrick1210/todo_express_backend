@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
+    req.body.isComplete = req.body.isComplete === "on" ? true : false;
     res.json(await Todos.create(req.body));
   } catch (err) {
     res.status(400).json(err);
@@ -24,6 +25,7 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
+    req.body.isComplete = req.body.isComplete === "on" ? true : false;
     res.json(await Todos.findByIdAndUpdate(req.params.id, req.body));
   } catch (err) {
     res.status(400).json(err);
