@@ -33,6 +33,7 @@ router.get("/", authCheck, async (req, res) => {
 
 router.post("/", authCheck, async (req, res) => {
   try {
+    req.body.username = req.username;
     req.body.isComplete = req.body.isComplete === "on" ? true : false;
     res.json(await Todos.create(req.body));
   } catch (err) {
