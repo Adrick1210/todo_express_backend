@@ -5,6 +5,7 @@ const mongoose = require("./connection");
 const TodoSchema = new mongoose.Schema({
   title: String,
   isComplete: Boolean,
+  username: String,
 });
 
 // OBJECT
