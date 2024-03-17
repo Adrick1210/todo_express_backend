@@ -43,8 +43,10 @@ router.post("/", authCheck, async (req, res) => {
 
 router.put("/:id", authCheck, async (req, res) => {
   try {
-    req.body.isComplete = req.body.isComplete === "on" ? true : false;
-    res.json(await Todos.findByIdAndUpdate(req.params.id, req.body));
+    console.log(req.body, req.params.id);
+    res.json(
+      await Todos.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    );
   } catch (err) {
     res.status(400).json(err);
   }
